@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9402132F2550C148000C1F0D /* CreateHypedEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9402132E2550C148000C1F0D /* CreateHypedEventView.swift */; };
+		940213322550C222000C1F0D /* HypedEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940213312550C222000C1F0D /* HypedEvent.swift */; };
+		940213352550C7D5000C1F0D /* FormLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940213342550C7D5000C1F0D /* FormLabelView.swift */; };
 		94A3740F254F7B120054AF56 /* Hyped_ListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A3740E254F7B120054AF56 /* Hyped_ListApp.swift */; };
 		94A37411254F7B120054AF56 /* HypedListTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A37410254F7B120054AF56 /* HypedListTabView.swift */; };
 		94A37413254F7B150054AF56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A37412254F7B150054AF56 /* Assets.xcassets */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9402132E2550C148000C1F0D /* CreateHypedEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHypedEventView.swift; sourceTree = "<group>"; };
+		940213312550C222000C1F0D /* HypedEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEvent.swift; sourceTree = "<group>"; };
+		940213342550C7D5000C1F0D /* FormLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLabelView.swift; sourceTree = "<group>"; };
 		94A3740B254F7B120054AF56 /* Hyped List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hyped List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A3740E254F7B120054AF56 /* Hyped_ListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hyped_ListApp.swift; sourceTree = "<group>"; };
 		94A37410254F7B120054AF56 /* HypedListTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListTabView.swift; sourceTree = "<group>"; };
@@ -57,6 +63,9 @@
 				94A3740E254F7B120054AF56 /* Hyped_ListApp.swift */,
 				94A37410254F7B120054AF56 /* HypedListTabView.swift */,
 				94A3741F254F7C4E0054AF56 /* UpcomingView.swift */,
+				9402132E2550C148000C1F0D /* CreateHypedEventView.swift */,
+				940213342550C7D5000C1F0D /* FormLabelView.swift */,
+				940213312550C222000C1F0D /* HypedEvent.swift */,
 				94A37412254F7B150054AF56 /* Assets.xcassets */,
 				94A37417254F7B150054AF56 /* Info.plist */,
 				94A37414254F7B150054AF56 /* Preview Content */,
@@ -141,6 +150,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9402132F2550C148000C1F0D /* CreateHypedEventView.swift in Sources */,
+				940213352550C7D5000C1F0D /* FormLabelView.swift in Sources */,
+				940213322550C222000C1F0D /* HypedEvent.swift in Sources */,
 				94A37411254F7B120054AF56 /* HypedListTabView.swift in Sources */,
 				94A3740F254F7B120054AF56 /* Hyped_ListApp.swift in Sources */,
 				94A37420254F7C4E0054AF56 /* UpcomingView.swift in Sources */,
