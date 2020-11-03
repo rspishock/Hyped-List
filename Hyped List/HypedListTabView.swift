@@ -13,9 +13,9 @@ struct HypedListTabView: View {
             NavigationView {
                 UpcomingView()
             }
-                .tabItem {
-                    Image(systemName:"calendar")
-                    Text("Upcoming") }
+            .tabItem {
+                Image(systemName:"calendar")
+                Text("Upcoming") }
             Text("Hello 2")
                 .tabItem {
                     Image(systemName:"magnifyingglass")

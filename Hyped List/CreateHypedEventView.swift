@@ -17,7 +17,7 @@ struct CreateHypedEventView: View {
             Section {
                 FormLabelView(title: "Title", iconSystemName: "keyboard", color: .green)
                 TextField("Family Vacation", text: $hypedEvent.title)
-                .autocapitalization(.words)
+                    .autocapitalization(.words)
             }       // Section
             
             Section {
