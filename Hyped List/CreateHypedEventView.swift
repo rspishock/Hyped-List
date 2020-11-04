@@ -9,8 +9,9 @@ import SwiftUI
 
 struct CreateHypedEventView: View {
     
-    @ StateObject var hypedEvent = HypedEvent()
+    @StateObject var hypedEvent = HypedEvent()
     @State var showTime = false
+    @State var showImagePicker = false
     
     var body: some View {
         Form {
@@ -30,10 +31,46 @@ struct CreateHypedEventView: View {
             }       // Section
             
             Section {
+                if hypedEvent.image() == nil {
+                    HStack {
+                        FormLabelView(title: "Image", iconSystemName: "camera", color: .purple)
+                        
+                        Spacer()
+                        
+                        Button(action: {showImagePicker = true}) {
+                            Text("Pick Image")
+                        }       // .button
+                    }           // HStack
+                } else {        // if statement
+                    HStack {
+                        FormLabelView(title: "Image", iconSystemName: "camera", color: .purple)
+                        
+                        Spacer()
+                        
+                        Button(action: {hypedEvent.imageData = nil}) {
+                            Text("Remove Image")
+                                .foregroundColor(.red)
+                        }       // .button
+                        .buttonStyle(BorderlessButtonStyle())
+                    }           // HStack
+                    
+                    Button(action: {hypedEvent.imageData = nil}) {
+                        hypedEvent.image()!
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }           // Button
+                    .buttonStyle(BorderlessButtonStyle())
+                }               // else
+            }                   // Section
+            .sheet(isPresented: $showImagePicker) {
+                ImagePicker(imageData: $hypedEvent.imageData)
+            }                   // .sheet
+            
+            Section {
                 ColorPicker(selection: $hypedEvent.color) {
                     FormLabelView(title: "Color", iconSystemName: "eyedropper", color: .yellow)
-                }   // ColorPicker
-            }       // Section
+                }               // ColorPicker
+            }                   // Section
             
             Section {
                 FormLabelView(title: "URL", iconSystemName: "link", color: .orange)
@@ -41,7 +78,6 @@ struct CreateHypedEventView: View {
                     .keyboardType(.URL)
                     .autocapitalization(.none)
             }       // Section
-            
         }           // Form
     }               // View
 }
