@@ -15,6 +15,7 @@
 		94A37413254F7B150054AF56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A37412254F7B150054AF56 /* Assets.xcassets */; };
 		94A37416254F7B150054AF56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A37415254F7B150054AF56 /* Preview Assets.xcassets */; };
 		94A37420254F7C4E0054AF56 /* UpcomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A3741F254F7C4E0054AF56 /* UpcomingView.swift */; };
+		94AE1EA2255C842700745352 /* HypedEventTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE1EA1255C842700745352 /* HypedEventTileView.swift */; };
 		94D48D1D2552F5D90021DE0F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D48D1C2552F5D90021DE0F /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		94A37415254F7B150054AF56 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		94A37417254F7B150054AF56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94A3741F254F7C4E0054AF56 /* UpcomingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingView.swift; sourceTree = "<group>"; };
+		94AE1EA1255C842700745352 /* HypedEventTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEventTileView.swift; sourceTree = "<group>"; };
 		94D48D1C2552F5D90021DE0F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +67,7 @@
 				94A3740E254F7B120054AF56 /* Hyped_ListApp.swift */,
 				94A37410254F7B120054AF56 /* HypedListTabView.swift */,
 				94A3741F254F7C4E0054AF56 /* UpcomingView.swift */,
+				94AE1EA1255C842700745352 /* HypedEventTileView.swift */,
 				9402132E2550C148000C1F0D /* CreateHypedEventView.swift */,
 				94D48D1C2552F5D90021DE0F /* ImagePicker.swift */,
 				940213342550C7D5000C1F0D /* FormLabelView.swift */,
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94AE1EA2255C842700745352 /* HypedEventTileView.swift in Sources */,
 				9402132F2550C148000C1F0D /* CreateHypedEventView.swift in Sources */,
 				940213352550C7D5000C1F0D /* FormLabelView.swift in Sources */,
 				940213322550C222000C1F0D /* HypedEvent.swift in Sources */,

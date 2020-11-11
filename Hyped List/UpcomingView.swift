@@ -21,8 +21,7 @@ struct UpcomingView: View {
                         .multilineTextAlignment(.center)
                 } else {
                     ForEach(hypedEvents) { hypedEvent in
-                        Text(hypedEvent.title)
-                        Circle().foregroundColor(hypedEvent.color)
+                        HypedEventTileView(hypedEvent: hypedEvent)
                     }   // ForEach
                 }       // if statement
                 
