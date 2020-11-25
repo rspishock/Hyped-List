@@ -49,6 +49,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94460C6B256EEA6200C74BF0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				940213312550C222000C1F0D /* HypedEvent.swift */,
+				94AE1EA8255C957800745352 /* DataController.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		94460C6C256EEA7400C74BF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				94A3741F254F7C4E0054AF56 /* UpcomingView.swift */,
+				9402132E2550C148000C1F0D /* CreateHypedEventView.swift */,
+				94AE1EA1255C842700745352 /* HypedEventTileView.swift */,
+				94D48D1C2552F5D90021DE0F /* ImagePicker.swift */,
+				940213342550C7D5000C1F0D /* FormLabelView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		94A37402254F7B120054AF56 = {
 			isa = PBXGroup;
 			children = (
@@ -70,13 +91,8 @@
 			children = (
 				94A3740E254F7B120054AF56 /* Hyped_ListApp.swift */,
 				94A37410254F7B120054AF56 /* HypedListTabView.swift */,
-				94A3741F254F7C4E0054AF56 /* UpcomingView.swift */,
-				94AE1EA1255C842700745352 /* HypedEventTileView.swift */,
-				94AE1EA8255C957800745352 /* DataController.swift */,
-				9402132E2550C148000C1F0D /* CreateHypedEventView.swift */,
-				94D48D1C2552F5D90021DE0F /* ImagePicker.swift */,
-				940213342550C7D5000C1F0D /* FormLabelView.swift */,
-				940213312550C222000C1F0D /* HypedEvent.swift */,
+				94460C6C256EEA7400C74BF0 /* Views */,
+				94460C6B256EEA6200C74BF0 /* Data */,
 				94A37412254F7B150054AF56 /* Assets.xcassets */,
 				94A37417254F7B150054AF56 /* Info.plist */,
 				94A37414254F7B150054AF56 /* Preview Content */,
