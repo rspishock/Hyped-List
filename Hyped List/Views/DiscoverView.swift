@@ -16,6 +16,12 @@ struct DiscoverView: View {
     var body: some View {
         HypedEventListView(hypedEvents: data.discoverHypedEvents.sorted { $0.date > $1.date }, noEventsText: "Loading upcoming events...")
             .navigationTitle("Discover")
+            .navigationBarItems(trailing:
+                                    Button(action: {data.getDiscoverEvents()}) {
+                                        Image(systemName: "arrow.clockwise")
+                                            .font(.title)
+                                    }   // Button
+            )
     }
 }
 

@@ -70,11 +70,11 @@
 			isa = PBXGroup;
 			children = (
 				945456B42598214200915268 /* HypedEventListView.swift */,
-				94A3741F254F7C4E0054AF56 /* UpcomingView.swift */,
 				9402132E2550C148000C1F0D /* CreateHypedEventView.swift */,
 				94AE1EA1255C842700745352 /* HypedEventTileView.swift */,
 				94D48D1C2552F5D90021DE0F /* ImagePicker.swift */,
 				940213342550C7D5000C1F0D /* FormLabelView.swift */,
+				94A3741F254F7C4E0054AF56 /* UpcomingView.swift */,
 				949BE1BF25982643009083EC /* PastView.swift */,
 				949BE1C425A121E3009083EC /* DiscoverView.swift */,
 			);
