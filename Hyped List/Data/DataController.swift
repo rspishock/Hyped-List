@@ -6,11 +6,15 @@
 //
 
 import Foundation
+import SwiftDate
+import UIColor_Hex_Swift
+import SwiftUI
 
 class DataController: ObservableObject {
     static var shared = DataController()
     
     @Published var hypedEvents: [HypedEvent] = []
+    @Published var discoverHypedEvents: [HypedEvent] = []
     
     var upcomingHypedEvents: [HypedEvent] {
         return hypedEvents.filter { $0.date > Date().dateAt(.startOfDay) }.sorted { $0.date < $1.date }
@@ -33,7 +37,7 @@ class DataController: ObservableObject {
     func loadData() {
         DispatchQueue.global().async {
             if let data = UserDefaults.standard.data(forKey: "hypedEvents") {
-                    let decoder = JSONDecoder()
+                let decoder = JSONDecoder()
                 if let jsonHypedEvents = try? decoder.decode([HypedEvent].self, from: data) {
                     DispatchQueue.main.async {
                         self.hypedEvents = jsonHypedEvents
@@ -42,4 +46,48 @@ class DataController: ObservableObject {
             }
         }
     }           // loadData()
+    
+    func getDiscoverEvents() {
+        if let url = URL(string: "https://api.jsonbin.io/b/5ff0e38814be54706018de6f") {
+            let request = URLRequest(url: url)
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if let webData = data {
+                    if let json = try? JSONSerialization.jsonObject(with: webData, options: []) as? [[String:String]] {
+                        
+                        var hypedEventsToAdd: [HypedEvent] = []
+                        
+                        for jsonHypedEvent in json {
+                            let hypedEvent = HypedEvent()
+                            if let id = jsonHypedEvent["id"] {
+                                hypedEvent.id = id
+                            }
+                            if let dateString = jsonHypedEvent["date"] {
+                                
+                                if let dateInRegion = dateString.toDate() {
+                                    hypedEvent.date = dateInRegion.date
+                                }
+                            }
+                            if let title = jsonHypedEvent["title"] {
+                                hypedEvent.title = title
+                            }
+                            if let url = jsonHypedEvent["url"] {
+                                hypedEvent.url = url
+                            }
+                            if let colorHex = jsonHypedEvent["color"] {
+                                hypedEvent.color = Color(UIColor(colorHex))
+                            }
+                            if let imageURL = jsonHypedEvent["imageURL"] {
+                                
+                            }
+                            hypedEventsToAdd.append(hypedEvent)
+                        }       // jsonHypedEvent
+                        DispatchQueue.main.async {
+                            self.discoverHypedEvents = hypedEventsToAdd
+                        }       // DispatchQue
+                    }
+                }
+            }.resume()
+        }       // if let url
+    }           // getDiscoverEvents()
+    
 }               // DataController

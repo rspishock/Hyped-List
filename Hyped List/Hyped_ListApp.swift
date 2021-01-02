@@ -14,6 +14,7 @@ struct Hyped_ListApp: App {
             HypedListTabView()
                 .onAppear {
                     DataController.shared.loadData()
+                    DataController.shared.getDiscoverEvents()
                 }
         }
     }

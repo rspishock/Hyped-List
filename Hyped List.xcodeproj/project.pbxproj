@@ -13,6 +13,7 @@
 		94460C70256EEC8F00C74BF0 /* UIColor_Hex_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 94460C6F256EEC8F00C74BF0 /* UIColor_Hex_Swift */; };
 		945456B52598214200915268 /* HypedEventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945456B42598214200915268 /* HypedEventListView.swift */; };
 		949BE1C025982643009083EC /* PastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949BE1BF25982643009083EC /* PastView.swift */; };
+		949BE1C525A121E3009083EC /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949BE1C425A121E3009083EC /* DiscoverView.swift */; };
 		94A3740F254F7B120054AF56 /* Hyped_ListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A3740E254F7B120054AF56 /* Hyped_ListApp.swift */; };
 		94A37411254F7B120054AF56 /* HypedListTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A37410254F7B120054AF56 /* HypedListTabView.swift */; };
 		94A37413254F7B150054AF56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A37412254F7B150054AF56 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		940213342550C7D5000C1F0D /* FormLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLabelView.swift; sourceTree = "<group>"; };
 		945456B42598214200915268 /* HypedEventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEventListView.swift; sourceTree = "<group>"; };
 		949BE1BF25982643009083EC /* PastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastView.swift; sourceTree = "<group>"; };
+		949BE1C425A121E3009083EC /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		94A3740B254F7B120054AF56 /* Hyped List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hyped List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A3740E254F7B120054AF56 /* Hyped_ListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hyped_ListApp.swift; sourceTree = "<group>"; };
 		94A37410254F7B120054AF56 /* HypedListTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListTabView.swift; sourceTree = "<group>"; };
@@ -58,8 +60,8 @@
 		94460C6B256EEA6200C74BF0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				940213312550C222000C1F0D /* HypedEvent.swift */,
 				94AE1EA8255C957800745352 /* DataController.swift */,
+				940213312550C222000C1F0D /* HypedEvent.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -68,12 +70,13 @@
 			isa = PBXGroup;
 			children = (
 				945456B42598214200915268 /* HypedEventListView.swift */,
-				949BE1BF25982643009083EC /* PastView.swift */,
 				94A3741F254F7C4E0054AF56 /* UpcomingView.swift */,
 				9402132E2550C148000C1F0D /* CreateHypedEventView.swift */,
 				94AE1EA1255C842700745352 /* HypedEventTileView.swift */,
 				94D48D1C2552F5D90021DE0F /* ImagePicker.swift */,
 				940213342550C7D5000C1F0D /* FormLabelView.swift */,
+				949BE1BF25982643009083EC /* PastView.swift */,
+				949BE1C425A121E3009083EC /* DiscoverView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				94A3740F254F7B120054AF56 /* Hyped_ListApp.swift in Sources */,
 				945456B52598214200915268 /* HypedEventListView.swift in Sources */,
 				94A37420254F7C4E0054AF56 /* UpcomingView.swift in Sources */,
+				949BE1C525A121E3009083EC /* DiscoverView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
