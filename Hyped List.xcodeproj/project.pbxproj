@@ -23,6 +23,7 @@
 		94AE1EA6255C936D00745352 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 94AE1EA5255C936D00745352 /* SwiftDate */; };
 		94AE1EA9255C957800745352 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE1EA8255C957800745352 /* DataController.swift */; };
 		94D48D1D2552F5D90021DE0F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D48D1C2552F5D90021DE0F /* ImagePicker.swift */; };
+		94EE184B25C23F830066AFF3 /* HypedEventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EE184A25C23F830066AFF3 /* HypedEventDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		94AE1EA1255C842700745352 /* HypedEventTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEventTileView.swift; sourceTree = "<group>"; };
 		94AE1EA8255C957800745352 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		94D48D1C2552F5D90021DE0F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		94EE184A25C23F830066AFF3 /* HypedEventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEventDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				94A3741F254F7C4E0054AF56 /* UpcomingView.swift */,
 				949BE1BF25982643009083EC /* PastView.swift */,
 				949BE1C425A121E3009083EC /* DiscoverView.swift */,
+				94EE184A25C23F830066AFF3 /* HypedEventDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				949BE1C025982643009083EC /* PastView.swift in Sources */,
 				940213352550C7D5000C1F0D /* FormLabelView.swift in Sources */,
 				940213322550C222000C1F0D /* HypedEvent.swift in Sources */,
+				94EE184B25C23F830066AFF3 /* HypedEventDetailView.swift in Sources */,
 				94AE1EA9255C957800745352 /* DataController.swift in Sources */,
 				94D48D1D2552F5D90021DE0F /* ImagePicker.swift in Sources */,
 				94A37411254F7B120054AF56 /* HypedListTabView.swift in Sources */,
