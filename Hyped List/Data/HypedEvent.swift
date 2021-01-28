@@ -75,6 +75,10 @@ class HypedEvent: ObservableObject, Identifiable, Codable {
     func timeFromNow() -> String {
         return date.toRelative()
     }
+    
+    func validURL() -> URL? {
+        return URL(string: url)
+    }
 }
 
 var testHypedEvent1: HypedEvent {
