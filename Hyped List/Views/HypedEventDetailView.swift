@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HypedEventDetailView: View {
     
-    var hypedEvent: HypedEvent
+    @ObservedObject var hypedEvent: HypedEvent
     var isDiscover = false
     
     
@@ -36,16 +36,22 @@ struct HypedEventDetailView: View {
             Spacer()
             
             if hypedEvent.validURL() != nil {
-                Button(action: {}) {
+                Button(action: {
+                    UIApplication.shared.open(hypedEvent.validURL()!)
+                }) {
                     HypedEventDetailViewButton(backgroundColor: .orange, imageName: "link", text: "Visit Site")
                 }       // Button
             }
             
             
             if isDiscover {
-                Button(action: {}) {
-                    HypedEventDetailViewButton(backgroundColor: .blue, imageName: "plus.circle", text: "Add")
+                Button(action: {
+                    DataController.shared.addFromDiscover(hypedEvent: hypedEvent)
+                }) {
+                    HypedEventDetailViewButton(backgroundColor: .blue, imageName: "plus.circle", text: hypedEvent.hasBeenAdded ? "Added" : "Add")
                 }       // Button
+                .disabled(hypedEvent.hasBeenAdded)
+                .opacity(hypedEvent.hasBeenAdded ? 0.5 : 1.0)
             } else {
                 Button(action: {}) {
                     HypedEventDetailViewButton(backgroundColor: .yellow, imageName: "pencil.circle", text: "Edit")
@@ -56,7 +62,8 @@ struct HypedEventDetailView: View {
                 
             }
             
-        }           // VStack
+        }               // VStack
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -81,7 +88,7 @@ struct HypedEventDetailViewButton: View {
         .foregroundColor(.white)
         .cornerRadius(5)
         .padding(.horizontal, 20)
-        .padding(.top, 10)
+        .padding(.bottom, 10)
     }               // body
 }                   // struct
 

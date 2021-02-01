@@ -11,6 +11,7 @@ struct HypedEventListView: View {
     
     var hypedEvents: [HypedEvent]
     var noEventsText: String
+    var isDiscover = false
     
     var body: some View {
         ScrollView {
@@ -23,14 +24,17 @@ struct HypedEventListView: View {
                         .padding(.horizontal, 20)
                 } else {
                     ForEach(hypedEvents) { hypedEvent in
-                        HypedEventTileView(hypedEvent: hypedEvent)
+                        NavigationLink(
+                            destination: HypedEventDetailView(hypedEvent: hypedEvent, isDiscover: isDiscover)) {
+                            HypedEventTileView(hypedEvent: hypedEvent)
+                        }
+                        .buttonStyle(PlainButtonStyle())
                     }   // ForEach
                 }       // if statement
-                
             }           // Vstack
-        }           // ScrollView
-    }
-}
+        }               // ScrollView
+    }                   // body
+}                       // HypedEventListView
 
 struct HypedEventListView_Previews: PreviewProvider {
     static var previews: some View {
