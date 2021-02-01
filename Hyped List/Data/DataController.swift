@@ -30,6 +30,26 @@ class DataController: ObservableObject {
         saveData()
     }
     
+    func deleteHypedEvent(hypedEvent: HypedEvent) {
+        if let index = hypedEvents.firstIndex(where: { loopingHypedEvent -> Bool  in
+            return hypedEvent.id == loopingHypedEvent.id
+        }) {
+            hypedEvents.remove(at: index)
+        }
+        saveData()
+    }
+    
+    func saveHypedEvent(hypedEvent: HypedEvent) {
+        if let index = hypedEvents.firstIndex(where: { loopingHypedEvent -> Bool  in
+            return hypedEvent.id == loopingHypedEvent.id
+        }) {
+            hypedEvents[index] = hypedEvent
+        } else {
+            hypedEvents.append(hypedEvent)
+        }
+        saveData()
+    }
+    
     func saveData() {
         DispatchQueue.global().async {
             let encoder = JSONEncoder()
@@ -37,8 +57,8 @@ class DataController: ObservableObject {
                 UserDefaults.standard.setValue(encoded, forKey: "hypedEvents")
                 UserDefaults.standard.synchronize()
             }
-        }       // DispatchQueue
-    }           // saveData()
+        }                       // DispatchQueue
+    }                           // saveData()
     
     func loadData() {
         DispatchQueue.global().async {
@@ -51,7 +71,7 @@ class DataController: ObservableObject {
                 }
             }
         }
-    }           // loadData()
+    }                           // loadData()
     
     func getDiscoverEvents() {
         if let url = URL(string: "https://api.jsonbin.io/b/5ff0e38814be54706018de6f") {
@@ -68,7 +88,7 @@ class DataController: ObservableObject {
                                 hypedEvent.id = id
                             }
                             if let dateString = jsonHypedEvent["date"] {
-                                
+                                SwiftDate.defaultRegion = Region.local
                                 if let dateInRegion = dateString.toDate() {
                                     hypedEvent.date = dateInRegion.date
                                 }
@@ -97,7 +117,6 @@ class DataController: ObservableObject {
                     }
                 }
             }.resume()
-        }       // if let url
-    }           // getDiscoverEvents()
-    
-}               // DataController
+        }                       // if let url
+    }                           // getDiscoverEvents()
+}                               // DataController

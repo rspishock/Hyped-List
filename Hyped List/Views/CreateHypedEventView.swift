@@ -83,12 +83,14 @@ struct CreateHypedEventView: View {
             }           // Form
             .navigationBarItems(leading: Button(action: {presentationMode.wrappedValue.dismiss()}) {
                 Text("Cancel")
+                    .font(.title2)
             }, trailing: Button(action: {
-                DataController.shared.hypedEvents.append(hypedEvent)
-                DataController.shared.saveData()
+                DataController.shared.saveHypedEvent(hypedEvent: hypedEvent)
                 presentationMode.wrappedValue.dismiss()
             }) {
                 Text("Done")
+                    .font(.title2)
+                    .bold()
             })          // navigagtionBarItems
             .navigationTitle("Create")
         }               // NavigationView

@@ -10,6 +10,7 @@ import SwiftUI
 struct HypedEventDetailView: View {
     
     @ObservedObject var hypedEvent: HypedEvent
+    @State var showingCreateView = false
     var isDiscover = false
     
     
@@ -53,15 +54,21 @@ struct HypedEventDetailView: View {
                 .disabled(hypedEvent.hasBeenAdded)
                 .opacity(hypedEvent.hasBeenAdded ? 0.5 : 1.0)
             } else {
-                Button(action: {}) {
+                Button(action: {
+                    showingCreateView = true
+                }) {
                     HypedEventDetailViewButton(backgroundColor: .yellow, imageName: "pencil.circle", text: "Edit")
                 }       // Button
-                Button(action: {}) {
+                .sheet(isPresented: $showingCreateView) {
+                    CreateHypedEventView(hypedEvent: hypedEvent)
+                }       // .sheet
+                
+                Button(action: {
+                    DataController.shared.deleteHypedEvent(hypedEvent: hypedEvent)
+                }) {
                     HypedEventDetailViewButton(backgroundColor: .red, imageName: "trash", text: "Delete")
                 }       // Button
-                
             }
-            
         }               // VStack
         .navigationBarTitleDisplayMode(.inline)
     }
