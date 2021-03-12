@@ -34,11 +34,13 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [HypedEventEntry] = []
         
+        let upcoming = DataController.shared.getUpcomingForWidget()
+        
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
+        for hourOffset in 0 ..< upcoming.count {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = HypedEventEntry(date: entryDate, hypedEvent: testHypedEvent1)
+            let entry = HypedEventEntry(date: entryDate, hypedEvent: upcoming[hourOffset])
             entries.append(entry)
         }
         
