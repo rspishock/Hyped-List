@@ -9,6 +9,7 @@ import Foundation
 import SwiftDate
 import UIColor_Hex_Swift
 import SwiftUI
+import WidgetKit
 
 class DataController: ObservableObject {
     static var shared = DataController()
@@ -57,6 +58,7 @@ class DataController: ObservableObject {
                 if let encoded = try? encoder.encode(self.hypedEvents) {
                     defaults.setValue(encoded, forKey: "hypedEvents")
                     defaults.synchronize()
+                    WidgetCenter.shared.reloadAllTimelines()
                 }
             }
         }                       // DispatchQueue

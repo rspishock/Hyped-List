@@ -71,7 +71,7 @@ struct Hyped_List_iOS_WidgetEntryView : View {
                         entry.hypedEvent!.color
                     }
                     Color.black
-                        .opacity(0.15)
+                        .opacity(0.2)
                     
                     Text(entry.hypedEvent!.title)
                         .foregroundColor(.white)
