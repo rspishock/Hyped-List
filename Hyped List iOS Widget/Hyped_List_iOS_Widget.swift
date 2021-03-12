@@ -10,11 +10,24 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> HypedEventEntry {
-        HypedEventEntry(date: Date(), hypedEvent: testHypedEvent1)
+        
+        let placeholderHypedEvent = HypedEvent()
+        placeholderHypedEvent.color = .green
+        placeholderHypedEvent.title = "Loading..."
+        
+        return HypedEventEntry(date: Date(), hypedEvent: placeholderHypedEvent)
     }
     
     func getSnapshot(in context: Context, completion: @escaping (HypedEventEntry) -> ()) {
-        let entry = HypedEventEntry(date: Date(), hypedEvent: testHypedEvent1)
+        
+        let upcoming = DataController.shared.getUpcomingForWidget()
+        
+        var entry = HypedEventEntry(date: Date(), hypedEvent: testHypedEvent1)
+        
+        if upcoming.count > 0 {
+            entry = HypedEventEntry(date: Date(), hypedEvent: upcoming.randomElement())
+        }
+        
         completion(entry)
     }
     
@@ -110,8 +123,8 @@ struct Hyped_List_iOS_Widget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             Hyped_List_iOS_WidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("HypedEvent Widget")
+        .description("See your upcoming events!.")
     }
 }
 
