@@ -40,19 +40,66 @@ struct HypedEventEntry: TimelineEntry {
 }
 
 struct Hyped_List_iOS_WidgetEntryView : View {
+    @Environment(\.widgetFamily) var widgetFamily
     var entry: Provider.Entry
     
     var body: some View {
-        if entry.hypedEvent != nil {
-            if entry.hypedEvent!.image() != nil {
-                entry.hypedEvent!.image()!
+        GeometryReader { geometry in
+            if entry.hypedEvent != nil {
+                ZStack {
+                    if entry.hypedEvent!.image() != nil {
+                        entry.hypedEvent!.image()!
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                    } else {
+                        entry.hypedEvent!.color
+                    }
+                    Color.black
+                        .opacity(0.15)
+                    
+                    Text(entry.hypedEvent!.title)
+                        .foregroundColor(.white)
+                        .font(fontSize())
+                        .padding()
+                        .multilineTextAlignment(.center)
+                    
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            Text(entry.hypedEvent!.timeFromNow())
+                                .bold()
+                                .padding(10)
+                                .foregroundColor(.white)
+                        }       // HStack
+                    }           // VStack
+                }               // ZStack
             } else {
-                entry.hypedEvent!.color
+                VStack {
+                    Spacer()
+                    Text("No upcoming events.  Tap me to add something.")
+                        .padding()
+                        .multilineTextAlignment(.center)
+                        .font(fontSize())
+                    Spacer()
+                }
             }
-        } else {
-            Text("No upcoming events.  Tap me to add something.")
         }
     }           // body
+    
+    func fontSize() -> Font {
+        switch widgetFamily {
+        case .systemSmall:
+            return .title2
+        case .systemMedium:
+            return .title
+        case .systemLarge:
+            return .largeTitle
+        @unknown default:
+            return .body
+        }
+    }           // fontSize()
 }               // struct
 
 @main
